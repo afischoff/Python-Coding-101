@@ -7,4 +7,4 @@ Line comments begin with #
 # Set a name variable 
 myName = 'Andy Fischoff'
 
-print(myName)
+print(myName) # will print Andy Fischoff
