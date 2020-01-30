@@ -1,0 +1,28 @@
+import os
+
+directories = []
+for dirname, dirnames, filenames in os.walk('.'):
+  if dirname[2:3] == '.' or dirname == '.':
+    continue
+
+  directories.append(dirname)
+
+for num, name in enumerate(directories, start=1):
+    print("{}) {}".format(num, name))
+
+print('Enter a directory number:')
+dirNum = input()
+
+for dirname, dirnames, filenames in os.walk(directories[int(dirNum) - 1]):
+  num = 1
+  for filename in filenames:
+    print("{}) {}".format(num, filename))
+    num += 1
+
+print('Enter a file number:')
+fileNum = input()
+
+exec(open(directories[int(dirNum) - 1] + '/' + filenames[int(fileNum) - 1]).read())
+
+# restart
+os.exec*()
